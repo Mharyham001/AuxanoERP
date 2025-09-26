@@ -1,0 +1,34 @@
+{% extends 'purchases/base_purchases.html' %}
+
+{% block title %}Quotations Received{% endblock %}
+
+{% block content %}
+  <h2 class="text-2xl font-bold mb-6">Vendor Quotations</h2>
+
+  <a href="{% url 'submit_quotation' %}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ New Request</a>
+
+  <table class="w-full table-auto border border-gray-300">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-4 py-2 border">Item</th>
+        <th class="px-4 py-2 border">Vendor</th>
+        <th class="px-4 py-2 border">Quoted Price</th>
+        <th class="px-4 py-2 border">Delivery Time</th>
+        <th class="px-4 py-2 border">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for quote in quotations %}
+      <tr class="border-t">
+        <td class="px-4 py-2 border">{{ quote.rfq.material_request.item_name }}</td>
+        <td class="px-4 py-2 border">{{ quote.rfq.vendor.name }}</td>
+        <td class="px-4 py-2 border">{{ quote.quoted_price }}</td>
+        <td class="px-4 py-2 border">{{ quote.delivery_time_in_days }} days</td>
+        <td class="px-4 py-2 border">{{ quote.notes }}</td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="5" class="text-center py-4 text-gray-500">No quotations received yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

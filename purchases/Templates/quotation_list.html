@@ -1,0 +1,20 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+  <h2>Quotations Received</h2>
+
+  {% for quote in quotations %}
+    <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+      <p><strong>Supplier:</strong> {{ quote.supplier_name }}</p>
+      <p><strong>Quoted Price:</strong> ₦{{ quote.quoted_price }}</p>
+      <p><strong>RFQ:</strong> {{ quote.rfq.material_request.item.item_name }}</p>
+
+      {% if user.groups.all.0.name == "Finance" and not quote.is_selected %}
+        <a href="{% url 'select_quotation' quote.id %}">Select Quotation</a>
+      {% elif quote.is_selected %}
+        <p style="color: green;"><strong>✔ Selected</strong></p>
+      {% endif %}
+    </div>
+  {% empty %}
+    <p>No quotations received yet.</p>
+{% endblock %}

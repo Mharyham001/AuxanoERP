@@ -1,0 +1,11 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+  <h2>Send RFQ for: {{ material.item.item_name }}</h2>
+
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Send RFQ</button>
+  </form>
+{% endblock %}

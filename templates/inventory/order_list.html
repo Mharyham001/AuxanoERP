@@ -1,0 +1,31 @@
+{% extends 'inventory/base_inventory.html' %}
+
+{% block title %}Inventory Orders{% endblock %}
+
+{% block content %}
+  <h2 class="text-2xl font-bold mb-6">📦 Orders</h2>
+  <a href="{% url 'create_order' %}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ Create Order</a>
+  <table class="w-full border border-gray-300 table-auto">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-4 py-2 border">Product</th>
+        <th class="px-4 py-2 border">Quantity</th>
+        <th class="px-4 py-2 border">Ordered By</th>
+        <th class="px-4 py-2 border">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+        <tr class="border-t">
+          <td class="px-4 py-2 border">{{ order.product.name }}</td>
+          <td class="px-4 py-2 border">{{ order.quantity }}</td>
+          <td class="px-4 py-2 border">{{ order.staff.user.username }}</td>
+          <td class="px-4 py-2 border">{{ order.status }}</td>
+
+        </tr>
+      {% empty %}
+        <tr><td colspan="5" class="text-center text-gray-500 py-4">No orders found.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

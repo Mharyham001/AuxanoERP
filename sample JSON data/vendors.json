@@ -1,0 +1,52 @@
+[
+  {
+    "model": "purchases.vendor",
+    "pk": 1,
+    "fields": {
+      "name": "TechWorld Ltd.",
+      "contact_person": "John Doe",
+      "email": "john@techworld.com",
+      "phone": "+2348012345678"
+    }
+  },
+  {
+    "model": "purchases.vendor",
+    "pk": 2,
+    "fields": {
+      "name": "Future Supplies",
+      "contact_person": "Jane Smith",
+      "email": "jane@futuresupplies.com",
+      "phone": "+2348098765432"
+    }
+  },
+  {
+    "model": "purchases.vendor",
+    "pk": 3,
+    "fields": {
+      "name": "Global Hardware",
+      "contact_person": "Michael Brown",
+      "email": "michael@globalhardware.com",
+      "phone": "+2348076543210"
+    }
+  },
+  {
+    "model": "purchases.vendor",
+    "pk": 4,
+    "fields": {
+      "name": "Prime Ventures",
+      "contact_person": "Aisha Bello",
+      "email": "aisha@primeventures.com",
+      "phone": "+2348123456789"
+    }
+  },
+  {
+    "model": "purchases.vendor",
+    "pk": 5,
+    "fields": {
+      "name": "Skyline Traders",
+      "contact_person": "David Johnson",
+      "email": "david@skyline.com",
+      "phone": "+2348065432198"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+  <h2>Create Purchase Order</h2>
+
+  <p><strong>Supplier:</strong> {{ quotation.supplier_name }}</p>
+  <p><strong>Price:</strong> ₦{{ quotation.quoted_price }}</p>
+  <p><strong>Item:</strong> {{ quotation.rfq.material_request.item.item_name }}</p>
+
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Generate PO</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+  <h2>All Material Requests</h2>
+  {% for req in requests %}
+    <p>
+      <strong>{{ req.item.item_name }}</strong> requested by {{ req.requester.username }} —
+      Status: {{ req.status }}
+
+      {% if user.groups.all.0.name == "Manager" and req.status == "Pending" %}
+        <a href="{% url 'approve_request' req.id %}">Approve/Reject</a>
+      {% endif %}
+    </p>
+  {% empty %}
+    <p>No requests yet.</p>
+{% endblock %}

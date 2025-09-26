@@ -1,0 +1,34 @@
+[
+
+  { "model": "inventory.staff", "pk": 1, "fields": { "user": 1, "role": "Manager", "phone": "08011111111" } },
+  { "model": "inventory.staff", "pk": 2, "fields": { "user": 2, "role": "Supervisor", "phone": "08022222222" } },
+  { "model": "inventory.staff", "pk": 3, "fields": { "user": 3, "role": "Technician", "phone": "08033333333" } },
+  { "model": "inventory.staff", "pk": 4, "fields": { "user": 4, "role": "Clerk", "phone": "08044444444" } },
+  { "model": "inventory.staff", "pk": 5, "fields": { "user": 5, "role": "Storekeeper", "phone": "08055555555" } },
+
+  { "model": "inventory.category", "pk": 1, "fields": { "name": "Electronics" } },
+  { "model": "inventory.category", "pk": 2, "fields": { "name": "Furniture" } },
+  { "model": "inventory.category", "pk": 3, "fields": { "name": "Stationery" } },
+  { "model": "inventory.category", "pk": 4, "fields": { "name": "Food" } },
+  { "model": "inventory.category", "pk": 5, "fields": { "name": "Clothing" } },
+  { "model": "inventory.category", "pk": 6, "fields": { "name": "Accessories" } },
+
+
+  { "model": "inventory.product", "pk": 1, "fields": { "name": "Laptop", "category": 1, "description": "Dell Latitude", "quantity": 10, "unit_price": "350000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 2, "fields": { "name": "Office Chair", "category": 2, "description": "Ergonomic chair", "quantity": 20, "unit_price": "55000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 3, "fields": { "name": "Pen Pack", "category": 3, "description": "Blue ink pens", "quantity": 100, "unit_price": "500.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 4, "fields": { "name": "Rice Bag", "category": 4, "description": "50kg bag of rice", "quantity": 50, "unit_price": "28000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 5, "fields": { "name": "T-shirt", "category": 5, "description": "Cotton white T-shirt", "quantity": 60, "unit_price": "2500.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 6, "fields": { "name": "Wristwatch", "category": 6, "description": "Digital wristwatch", "quantity": 15, "unit_price": "15000.00", "added_on": "2025-09-02T21:00:00Z" } },
+
+
+
+  { "model": "inventory.order", "pk": 1, "fields": { "staff": 1, "product": 1, "quantity": 2, "status": "pending", "requested_at": "2025-09-02T21:30:00Z" } },
+  { "model": "inventory.order", "pk": 2, "fields": { "staff": 2, "product": 2, "quantity": 5, "status": "approved", "requested_at": "2025-09-02T21:31:00Z" } },
+  { "model": "inventory.order", "pk": 3, "fields": { "staff": 3, "product": 3, "quantity": 10, "status": "declined", "requested_at": "2025-09-02T21:32:00Z" } },
+  { "model": "inventory.order", "pk": 4, "fields": { "staff": 4, "product": 4, "quantity": 1, "status": "pending", "requested_at": "2025-09-02T21:33:00Z" } },
+  { "model": "inventory.order", "pk": 5, "fields": { "staff": 5, "product": 5, "quantity": 3, "status": "approved", "requested_at": "2025-09-02T21:34:00Z" } },
+  { "model": "inventory.order", "pk": 6, "fields": { "staff": 1, "product": 6, "quantity": 2, "status": "pending", "requested_at": "2025-09-02T21:35:00Z" } }
+
+
+]

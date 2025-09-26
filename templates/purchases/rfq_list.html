@@ -1,0 +1,41 @@
+{% extends 'purchases/base_purchases.html' %}
+
+{% block title %}Vendors{% endblock %}
+
+{% block content %}
+
+ <h2 class="text-2xl font-bold mb-6">Request for Quotes</h2>
+
+<a href="{% url 'create_rfq' %}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ Create RFQ</a>
+
+<table class="w-full table-auto border border-gray-300">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="px-4 py-2 border">Item</th>
+      <th class="px-4 py-2 border">Vendor</th>
+      <th class="px-4 py-2 border">Quantity</th>
+      <th class="px-4 py-2 border">Date</th>
+      <th class="px-4 py-2 border">Deadline</th> 
+    </tr>
+  </thead>
+  <tbody>
+      {% for rfq in req %}
+    <tr>
+        <td class="px-4 py-2 border">{{ rfq.material_request.item_name }}</td>
+        <td class="px-4 py-2 border">{{ rfq.vendor.name }}</td>
+        <td class="px-4 py-2 border">{{ rfq.quantity }}</td>
+        <td class="px-4 py-2 border">{{ rfq.requested_at }}</td>
+        <td class="px-4 py-2 border capitalize">{{ rfq.deadline }}</td>
+    </tr>
+
+     </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5" class="text-center text-gray-500 py-4">No purchase orders found.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+    
+</table>
+
+{% endblock %}

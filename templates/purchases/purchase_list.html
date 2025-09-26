@@ -1,0 +1,45 @@
+{% extends 'purchases/base_purchases.html' %}
+
+{% block title %}Purchase Requests{% endblock %}
+
+{% block content %}
+  <h1 class="text-2xl font-bold mb-6">Purchase Requests</h1>
+
+  <a href="{% url 'create_purchase_request' %}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ New Request</a>
+
+  <table class="w-full table-auto border border-gray-300">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="px-4 py-2 border">Item</th>
+      <th class="px-4 py-2 border">Qty</th>
+      <th class="px-4 py-2 border">Status</th>
+      <th class="px-4 py-2 border">Requested By</th>
+      <th class="px-4 py-2 border">Action</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for r in requests %}
+    <tr class="border-t">
+      <td class="px-4 py-2 border">{{ r.item_name }}</td>
+      <td class="px-4 py-2 border">{{ r.quantity }}</td>
+      <td class="px-4 py-2 border capitalize">{{ r.status }}</td>
+      <td class="px-4 py-2 border">{{ r.requester.username }}</td>
+      <td class="px-4 py-2 border">
+        {% if r.status == 'pending' %}
+          <a href="{% url 'approve_request' r.id %}" class="text-green-600 hover:underline">Approve</a> |
+          <a href="{% url 'decline_request' r.id %}" class="text-red-600 hover:underline">Decline</a>
+        {% else %}
+          <span class="text-gray-500 capitalize">{{ r.status }}</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="5" class="text-center text-gray-500 py-4">No purchase requests found.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

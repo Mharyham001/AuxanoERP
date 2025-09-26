@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <form method="post" class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+        {% csrf_token %}
+        <h2 class="text-2xl font-bold mb-4">Create Account</h2>
+
+        {% for field in form %}
+        <div class="mb-4" >
+            <label class="block mb-2">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <p class="text-red-500 text-sm" >{{ field.errors.0 }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Register</button>
+        <p class="mt-4 text-sm text-center">
+            I already have an account  
+            <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800">Login</a>
+        </p>
+    </form>
+</body>
+</html>

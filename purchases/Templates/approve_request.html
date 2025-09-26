@@ -1,0 +1,14 @@
+{% extends "purchase/base.html" %}
+
+{% block content %}
+  <h2>Approve or Reject Request</h2>
+  <p>Item: {{ req.item.item_name }}</p>
+  <p>Quantity: {{ req.quantity_requested }}</p>
+  <p>Purpose: {{ req.purpose }}</p>
+
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit Decision</button>
+  </form>
+{% endblock %}

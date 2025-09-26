@@ -1,0 +1,26 @@
+{% extends 'inventory/base_inventory.html' %}
+{% block title %}Add Staff{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">👤 Add Staff Member</h2>
+
+<form method="POST" class="bg-white p-6 rounded shadow max-w-xl">
+  {% csrf_token %}
+
+  <label class="block mb-2 font-semibold">Select User</label>
+  <select name="user" class="w-full mb-4 p-2 border rounded">
+    {% for u in users %}
+      <option value="{{ u.id }}">{{ u.username }}</option>
+    {% endfor %}
+  </select>
+
+  <label class="block mb-2 font-semibold">Role</label>
+  <input type="text" name="role" class="w-full mb-6 p-2 border rounded" required>
+  
+  <label class="block mb-2 font-semibold">Phone number</label>
+  <input type="text" name="phone" class="w-full mb-6 p-2 border rounded" required>
+
+  <button type="submit" class="bg-purple-600 text-white py-2 px-4 rounded">Add Staff</button>
+</form>
+
+{% endblock %}

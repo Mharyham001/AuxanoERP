@@ -1,0 +1,23 @@
+{% extends 'inventory/base_inventory.html' %}
+{% block title %}Edit Staff{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">✏️ Edit Staff</h2>
+
+<form method="POST" class="bg-white p-6 rounded shadow max-w-xl">
+  {% csrf_token %}
+
+  <label class="block mb-2 font-semibold">Username</label>
+  <input type="text" value="{{ staff.user.username }}" disabled class="w-full p-2 mb-4 border rounded bg-gray-100">
+
+  <label class="block mb-2 font-semibold">Role</label>
+  <input type="text" name="role" value="{{ staff.role }}" class="w-full p-2 mb-4 border rounded" required>
+
+  <label class="block mb-2 font-semibold">Phone</label>
+  <input type="text" name="phone" value="{{ staff.phone }}" class="w-full p-2 mb-6 border rounded" required>
+
+  <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">Update</button>
+  <a href="{% url 'staff_list' %}" class="ml-4 text-gray-500 hover:text-black">Cancel</a>
+
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'inventory/base_inventory.html' %}
+{% block title %}Create Order{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">➕ Create Order</h2>
+
+<form method="POST" class="bg-white p-6 rounded shadow max-w-xl">
+  {% csrf_token %}
+
+  <label class="block mb-2 font-semibold">Product</label>
+  <select name="product" class="w-full mb-4 p-2 border rounded">
+    {% for p in products %}
+      <option value="{{ p.id }}">{{ p.name }}</option>
+    {% endfor %}
+  </select>
+
+  <label class="block mb-2 font-semibold">Quantity</label>
+  <input type="number" name="quantity" class="w-full mb-4 p-2 border rounded" required>
+
+  <label class="block mb-2 font-semibold">Staff</label>
+  <select name="staff" class="w-full mb-6 p-2 border rounded">
+    {% for s in staff %}
+      <option value="{{ s.id }}">{{ s.user.username }}</option>
+    {% endfor %}
+  </select>
+
+  <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded">Submit Order</button>
+</form>
+{% endblock %}

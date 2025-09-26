@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ERP Purchase System</title>
+</head>
+<body>
+    <h1>ERP Purchase Authorization</h1>
+    {% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }}!</p>
+
+  {% if user.groups.all.0.name == "Admin" %}
+    <li><a href="{% url 'admin_dashboard' %}">Admin Dashboard</a></li>
+    <li><a href="{% url 'manage_users' %}">User Management</a></li>
+    <li><a href="{% url 'approve_requests' %}">Approve Requests</a></li>
+  {% elif user.groups.all.0.name == "General" %}
+    <li><a href="{% url 'submit_request' %}">Submit Purchase Request</a></li>
+    <li><a href="{% url 'view_inventory' %}">View Inventory</a></li>
+  {% endif %}
+
+
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
