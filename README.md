@@ -41,8 +41,8 @@ It is designed to unify organizational operations across multiple modules while 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/HeteroGenius01/erp_1_0/tree/Ayomide
-cd erp_1_0
+git clone (https://github.com/Mharyham001/AuxanoERP.)
+cd AuxanoERP
 
 
 -------------------------------------------------------------------------------
@@ -60,8 +60,8 @@ python manage.py runserver
 📂 Project Structure
 
 
-erp_1_0/
-│── erp_1_0/            # Core Django project
+AuxanoERP/
+│── AuxanoERP/          # Core Django project
 │── purchases/          # Purchases module
 │── inventory/          # Inventory module
 │── templates/          # HTML templates
@@ -112,7 +112,7 @@ Multi-tenancy: Schema-based tenant support
 
 ----------------------------------------------------------------------
 👨🏽‍💻 Author
-Ogunyemi Ayomide Samuel (Anuoluwa)
+Mariam Eniola Taiwo
 
 ----------------------------------------------------------------------
 
@@ -123,4 +123,4 @@ This `README.md` is **production-ready**:
 - Has a **contribution guide & license**  
 
 
-for further questions or observations, feel free to reach out to me via mail ayomidesamuel365@gmail.com
+for further questions or observations, feel free to reach out to me via mail mariamtaiwo738@gmail.com
