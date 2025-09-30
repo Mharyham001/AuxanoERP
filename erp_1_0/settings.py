@@ -22,9 +22,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "auxanoerp-production.up.railway.app"]
 
-CSRF_TRUSTED_ORIGINS = ["https://djangoerp-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://auxanoerp-production.up.railway.app"]
 
 # Application definition
 SHARED_APPS = [
