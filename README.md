@@ -1,6 +1,6 @@
-# ERP 
+# Django_ERP 
 
-ERP is a modular Enterprise Resource Planning (ERP) system built with Django and PostgreSQL.  
+Django_ERP is a modular Enterprise Resource Planning (ERP) system built with Django and PostgreSQL.  
 It is designed to unify organizational operations across multiple modules while maintaining flexibility, synchronization, and scalability.  
 
 ## 🚀 Features

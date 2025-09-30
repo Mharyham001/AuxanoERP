@@ -1,29 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 h-screen flex items-center justify-center">
-    <form method="post" class="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        {% csrf_token %}
-        <h2 class="text-2xl font-bold mb-4">Create Account</h2>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-        {% for field in form %}
-        <div class="mb-4" >
-            <label class="block mb-2">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-                <p class="text-red-500 text-sm" >{{ field.errors.0 }}</p>
-            {% endif %}
-        </div>
-        {% endfor %}
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
+    
+    <form method="POST" action="{% url 'register' %}" class="space-y-4">
+  {% csrf_token %}
 
-        <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Register</button>
-        <p class="mt-4 text-sm text-center">
-            I already have an account  
-            <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800">Login</a>
-        </p>
-    </form>
+  <!-- Render each field manually (for Tailwind styling) -->
+  <div>
+    <label class="block text-sm font-medium">First Name</label>
+    {{ form.first_name }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Last Name</label>
+    {{ form.last_name }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Email</label>
+    {{ form.email }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Username</label>
+    {{ form.username }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Phone</label>
+    {{ form.phone }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Password</label>
+    {{ form.password1 }}
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium">Confirm Password</label>
+    {{ form.password2 }}
+  </div>
+
+    <p class="text-center small">
+  By signing up, you agree to our 
+  <a href="#">Terms</a>, 
+  <a href="#">Privacy Policy</a> 
+  and 
+  <a href="#">Cookies Policy</a>.
+</p>
+
+ 
+  <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md">Register</button>
+      <p class="mt-4 tex-sm text-center">
+        Already  have an account
+        <a href="#" class="text-blue-600 hover:text-blue-800">Sign in</a>
+      </p>
+      <p class="mt-4 tex-sm text-center">
+        <a href="#" class="text-blue-600 hover:text-blue-800">Reset password</a>
+      </p>
+
+</form>
+    
+  </div>
+
 </body>
 </html>

@@ -1,21 +1,7 @@
 [
   {
     "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "username": "admin",
-      "email": "admin@example.com",
-      "first_name": "System",
-      "last_name": "Admin",
-      "is_staff": true,
-      "is_superuser": true,
-      "is_active": true,
-      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 2,
+    "pk": 4,
     "fields": {
       "username": "john_doe",
       "email": "john@example.com",
@@ -29,7 +15,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 3,
+    "pk": 5,
     "fields": {
       "username": "jane_smith",
       "email": "jane@example.com",
@@ -43,7 +29,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 4,
+    "pk": 6,
     "fields": {
       "username": "aisha_bello",
       "email": "aisha@example.com",
@@ -57,7 +43,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 5,
+    "pk": 7,
     "fields": {
       "username": "michael_brown",
       "email": "michael@example.com",

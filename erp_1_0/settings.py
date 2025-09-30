@@ -22,9 +22,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "auxanoerp-production.up.railway.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
 
-CSRF_TRUSTED_ORIGINS = ["https://auxanoerp-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://djangoerp-production.up.railway.app"]
 
 # Application definition
 SHARED_APPS = [
@@ -38,10 +38,9 @@ SHARED_APPS = [
     "django.contrib.staticfiles",
     "django_cleanup.apps.CleanupConfig",
     "django.contrib.sites",
-    "django_browser_reload",
     "allauth",
     "allauth.account",
-    "dashboard",
+    "dashboard.apps.DashboardConfig",
     "purchases",
     "CRM",
     "django_htmx",
@@ -65,7 +64,7 @@ TENANT_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_browser_reload",
-    "dashboard",
+    "dashboard.apps.DashboardConfig",
     "purchases",
     "CRM",
     "Accounting",

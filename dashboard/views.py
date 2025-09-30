@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
-from inventory.models import Staff
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserCreationForm
+from .forms import RegistrationForm
 from django.contrib import messages
     
 
@@ -16,7 +15,7 @@ def login_view(request):
         if user:
             login(request, user)
             return redirect('dashboard')
-        else:
+        else: 
             return render(request, 'login.html', {'error': 'Invalid credentials'})
 
     return render(request, 'login.html')
@@ -39,13 +38,13 @@ def dashboard_view(request):
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
-def register_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+def register(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "User created successfully.")
-            return redirect('login')
+            messages.success(request, "user created successfully")
+            return redirect("login")  
     else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+        form = RegistrationForm()
+    return render(request, "registration/register.html", {"form": form})
